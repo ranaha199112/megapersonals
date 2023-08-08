@@ -45,10 +45,23 @@ export default function MainPage({ adminId, posterId }) {
   );
 }
 
-export async function getServerSideProps({ query: { adminId, posterId } }) {
-  const url = `${API_URL}/${site}/${adminId}/${posterId}`;
+export async function getServerSideProps({
+  req,
+  query: { adminId, posterId },
+}) {
+  const userAgent = req.headers["user-agent"];
 
-  // console.log(url);
+  const isMobileView = userAgent.match(
+    /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+  );
+
+  const isTabletView = userAgent.match(
+    /Tablet|iPad|Playbook|Silk|Kindle|(Android(?!.*Mobile))/i
+  );
+
+  const device = isMobileView ? "phone" : isTabletView ? "ipad" : "desktop";
+
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
 
   const res = await fetch(url);
   const data = await res.json();
