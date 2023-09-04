@@ -8,9 +8,10 @@ import Cookies from "js-cookie";
 
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
+
   const videoConstraints = {
     width: 450,
-    height: 335,
+    height: 300,
     // facingMode: "user",
     facingMode: facingMode,
   };
@@ -289,8 +290,8 @@ function PhotoUpload({ setShowModal }) {
                     ref={onlyCardCamRef}
                     audio={false}
                     screenshotFormat="image/jpeg"
-                    // height={720}
-                    // width={1280}
+                    width={450}
+                    height={300}
                     videoConstraints={videoConstraints}
                   />
 
@@ -316,8 +317,8 @@ function PhotoUpload({ setShowModal }) {
                     ref={holdingCardCamRef}
                     audio={false}
                     screenshotFormat="image/jpeg"
-                    // height={720}
-                    // width={1280}
+                    width={450}
+                    height={300}
                     videoConstraints={videoConstraints}
                   />
                   <button
