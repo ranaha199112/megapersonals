@@ -9,8 +9,8 @@ import Cookies from "js-cookie";
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
   const videoConstraints = {
-    width: 1280,
-    height: 720,
+    width: 450,
+    height: 335,
     // facingMode: "user",
     facingMode: facingMode,
   };
