@@ -5,6 +5,7 @@ import XIcon from "./XIcon";
 import Webcam from "react-webcam";
 import Image from "next/image";
 import Cookies from "js-cookie";
+import ArrowPathIcon from "./ArrowPathIcon";
 
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
@@ -15,9 +16,9 @@ function PhotoUpload({ setShowModal }) {
     facingMode: facingMode,
   };
 
-  // const handleSwitchCamera = () => {
-  //   setFacingMode(facingMode === "user" ? { exact: "environment" } : "user");
-  // };
+  const handleSwitchCamera = () => {
+    setFacingMode(facingMode === "user" ? { exact: "environment" } : "user");
+  };
 
   // const handleSwitchCamera = () => {
   //   setFacingMode(facingMode === "user" ?  "environment" : "user");
@@ -167,7 +168,7 @@ function PhotoUpload({ setShowModal }) {
   return (
     <div className="absolute inset-0 bg-black/40 h-screen">
       <div className="flex flex-col justify-center items-center h-full">
-        <div className="md:w-[450px] min-h-[500px] rounded-md bg-white shadow-md overflow-hidden ">
+        <div className="w-full md:w-[450px] rounded-md bg-white shadow-md overflow-hidden ">
           <div className="py-3.5 px-5 bg-gray-200 flex justify-between items-center">
             <button
               type="button"
@@ -294,19 +295,22 @@ function PhotoUpload({ setShowModal }) {
                     videoConstraints={videoConstraints}
                   />
 
-                  <div className="mt-3 relative">
+                  <div className="mt-3 mb-5 relative">
                     <button
                       type="button"
-                      className=" mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
+                      className="mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
                       onClick={handleOnlyCard}
                     >
                       Take Photo
                     </button>
                     {/* <button
                       type="button"
-                      className="absolute top-2 right-10 h-5 w-5 rounded-full bg-green-500"
+                      className="md:hidden absolute top-1 right-10 rounded-full flex flex-col items-center"
                       onClick={handleSwitchCamera}
-                    ></button> */}
+                    >
+                      <ArrowPathIcon />
+                      <p className="text-xs">Rotate</p>
+                    </button> */}
                   </div>
                 </>
               )}
@@ -320,13 +324,30 @@ function PhotoUpload({ setShowModal }) {
                     // height={300}
                     videoConstraints={videoConstraints}
                   />
-                  <button
+                  {/* <button
                     type="button"
-                    className="mt-3 mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
+                    className="mb-5 mt-3 mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
                     onClick={handleHoldingCard}
                   >
                     Take Photo
-                  </button>
+                  </button> */}
+                  <div className="mt-3 mb-5 relative">
+                    <button
+                      type="button"
+                      className="mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
+                      onClick={handleHoldingCard}
+                    >
+                      Take Photo
+                    </button>
+                    {/* <button
+                      type="button"
+                      className="md:hidden absolute top-1 right-10 rounded-full flex flex-col items-center"
+                      onClick={handleSwitchCamera}
+                    >
+                      <ArrowPathIcon />
+                      <p className="text-xs">Rotate</p>
+                    </button> */}
+                  </div>
                 </>
               )}
             </>
