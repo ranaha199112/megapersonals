@@ -168,7 +168,7 @@ function PhotoUpload({ setShowModal }) {
   return (
     <div className="absolute inset-0 bg-black/40 h-screen">
       <div className="flex flex-col justify-center items-center h-full">
-        <div className="w-full md:w-[450px] rounded-md bg-white shadow-md overflow-hidden ">
+        <div className="md:w-[450px] rounded-md bg-white shadow-md overflow-hidden ">
           <div className="py-3.5 px-5 bg-gray-200 flex justify-between items-center">
             <button
               type="button"
