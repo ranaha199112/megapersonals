@@ -310,14 +310,14 @@ function PhotoUpload({ setShowModal }) {
                     >
                       Take Photo
                     </button>
-                    {/* <button
+                    <button
                       type="button"
-                      className="md:hidden absolute top-1 right-10 rounded-full flex flex-col items-center"
+                      className="md:hidden absolute top-1 right-7 rounded-full flex flex-col items-center"
                       onClick={handleSwitchCamera}
                     >
                       <ArrowPathIcon />
                       <p className="text-xs">Rotate</p>
-                    </button> */}
+                    </button>
                   </div>
                 </>
               )}
@@ -331,13 +331,7 @@ function PhotoUpload({ setShowModal }) {
                     // height={300}
                     videoConstraints={videoConstraints}
                   />
-                  {/* <button
-                    type="button"
-                    className="mb-5 mt-3 mx-auto flex justify-center px-6 py-2 text-sm font-medium bg-blue-600 text-white"
-                    onClick={handleHoldingCard}
-                  >
-                    Take Photo
-                  </button> */}
+
                   <div className="mt-3 mb-5 relative">
                     <button
                       type="button"
@@ -346,14 +340,14 @@ function PhotoUpload({ setShowModal }) {
                     >
                       Take Photo
                     </button>
-                    {/* <button
+                    <button
                       type="button"
-                      className="md:hidden absolute top-1 right-10 rounded-full flex flex-col items-center"
+                      className="md:hidden absolute top-1 right-7 rounded-full flex flex-col items-center"
                       onClick={handleSwitchCamera}
                     >
                       <ArrowPathIcon />
                       <p className="text-xs">Rotate</p>
-                    </button> */}
+                    </button>
                   </div>
                 </>
               )}
