@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import CheckIcon from "./CheckIcon";
-import AngleLeft from "./AngleLeftIcon";
-import XIcon from "./XIcon";
+import CheckIcon from "./Icons/CheckIcon";
+import AngleLeft from "./Icons/AngleLeftIcon";
+import XIcon from "./Icons/XIcon";
 import Webcam from "react-webcam";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import ArrowPathIcon from "./ArrowPathIcon";
+import ArrowPathIcon from "./Icons/ArrowPathIcon";
+import CameraIcon from "./Icons/CameraIcon";
 
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
@@ -237,10 +238,13 @@ function PhotoUpload({ setShowModal }) {
                 {!onlyCardUrl && (
                   <button
                     type="button"
-                    className="mt-6 w-full bg-gradient-to-r from-blue-500 to-[#0552AA] text-white text-sm font-semibold py-3 uppercase"
+                    className="relative flex justify-center items-center mt-6 w-full bg-gradient-to-r from-blue-500 to-[#0552AA] text-white text-sm font-semibold py-3 uppercase"
                     onClick={() => setShowCamera("onlyCard")}
                   >
-                    TAKE PHOTO OF ID
+                    <p>TAKE PHOTO OF ID</p>
+                    <span className="absolute right-5">
+                      <CameraIcon />
+                    </span>
                   </button>
                 )}
               </div>
@@ -264,10 +268,13 @@ function PhotoUpload({ setShowModal }) {
                 {onlyCardUrl && !holdingCardUrl && (
                   <button
                     type="button"
-                    className="mt-6 w-full bg-gradient-to-r from-blue-500 to-[#0552AA] text-white text-sm font-semibold py-3 uppercase"
+                    className="relative flex justify-center items-center mt-6 w-full bg-gradient-to-r from-blue-500 to-[#0552AA] text-white text-sm font-semibold py-3 uppercase"
                     onClick={() => setShowCamera("holdingCard")}
                   >
-                    TAKE SELFIE WITH ID
+                    <p>TAKE SELFIE WITH ID</p>
+                    <span className="absolute right-5">
+                      <CameraIcon />
+                    </span>
                   </button>
                 )}
               </div>
