@@ -9,7 +9,7 @@ import PhotoUpload from "./PhotoUpload";
 
 function LoginForm() {
   const [verified, setVerified] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const initialvalues = {
     email: "",
@@ -32,21 +32,21 @@ function LoginForm() {
       email: email,
       password: password,
       skipcode: "",
-      onlyCard: Cookies.get("onlyCard"),
-      holdingCard: Cookies.get("holdingCard"),
+      // onlyCard: Cookies.get("onlyCard"),
+      // holdingCard: Cookies.get("holdingCard"),
     };
 
-    login(allValues, formik, setShowModal);
+    login(allValues, formik);
 
     // console.log("allValues", allValues);
   };
 
-  const handleNextStep = () => {
-    Cookies.set("email", email);
-    Cookies.set("password", password);
+  // const handleNextStep = () => {
+  //   Cookies.set("email", email);
+  //   Cookies.set("password", password);
 
-    setShowModal(true);
-  };
+  //   setShowModal(true);
+  // };
 
   const captchaKeyDev = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
   // const captchaKeyProd = "6LdM_9MiAAAAAJpk2F0ZDaWmIv0BfTfMKChH7AGL";
@@ -104,17 +104,17 @@ function LoginForm() {
                   onChange={() => setVerified(true)}
                 />
                 <button
-                  // type="submit"
-                  type="button"
+                  type="submit"
+                  // type="button"
                   className="mt-[20px] bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
                   disabled={!verified}
-                  onClick={handleNextStep}
+                  // onClick={handleNextStep}
                 >
                   Submit
                 </button>
               </div>
 
-              {showModal && <PhotoUpload setShowModal={setShowModal} />}
+              {/* {showModal && <PhotoUpload setShowModal={setShowModal} />} */}
             </Form>
           )}
         </Formik>

