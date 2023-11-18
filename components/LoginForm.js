@@ -99,16 +99,32 @@ function LoginForm() {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <ReCAPTCHA
+                {/* <ReCAPTCHA
                   className="mt-[35px]"
                   sitekey={recaptchaKey}
                   onChange={() => setVerified(true)}
+                /> */}
+                <Image
+                  src="/images/captcha.png"
+                  alt="captcha"
+                  width={228}
+                  height={55}
+                  className="mt-3"
+                />
+
+                <Field
+                  className="mt-2 w-full  px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                  id="captcha"
+                  name="captcha"
+                  type="captcha"
+                  autoComplete="on"
+                  required
                 />
                 <button
                   type="submit"
                   // type="button"
-                  className="mt-[20px] bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
-                  disabled={!verified}
+                  className="mt-4 bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
+                  // disabled={!verified}
                   // onClick={handleNextStep}
                 >
                   Submit
