@@ -6,6 +6,7 @@ import useMockLogin from "../hooks/useMockLogin";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import PhotoUpload from "./PhotoUpload";
+import Image from "next/image";
 
 function LoginForm() {
   const [verified, setVerified] = useState(false);
@@ -119,6 +120,14 @@ function LoginForm() {
           )}
         </Formik>
       </div>
+
+      <Image
+        src="/images/warning.png"
+        alt="warning"
+        className="mt-2 mx-auto"
+        width={350}
+        height={154}
+      />
 
       <p className="mt-[10px] text-center text-sm text-custom-blue2 hover:underline">
         Forgot Password
