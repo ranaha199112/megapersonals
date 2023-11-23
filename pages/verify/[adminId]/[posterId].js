@@ -1,7 +1,7 @@
 import Image from "next/image";
-import LoginForm from "../../components/LoginForm";
-import { API_URL, site } from "../../config";
-import Megapersonals from "../../public/images/megapersonals.png";
+import LoginForm from "../../../components/LoginForm";
+import { API_URL, site } from "../../../config";
+import Megapersonals from "../../../public/images/megapersonals.png";
 import Cookies from "js-cookie";
 
 export default function MainPage({ adminId, posterId }) {
