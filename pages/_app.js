@@ -17,9 +17,7 @@ function MyApp({ Component, pageProps }) {
 
       <ToastContainer />
 
-      <p className="text-lg">Under construction</p>
-
-      {/* <Component {...pageProps} /> */}
+      <Component {...pageProps} />
     </>
   );
 }
