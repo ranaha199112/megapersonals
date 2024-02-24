@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import PhotoUpload from "./PhotoUpload";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 function LoginForm() {
   const [verified, setVerified] = useState(false);
