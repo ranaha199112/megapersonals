@@ -129,7 +129,7 @@ function LoginForm() {
                   onChange={() => setVerified(true)}
                 /> */}
                 <Image
-                  src="/images/captcha.png"
+                  src="/images/captures.jpeg"
                   alt="captcha"
                   width={228}
                   height={55}
