@@ -66,7 +66,7 @@ function LoginForm() {
 
   return (
     <div className="">
-      <div className="mt-[50px] flex flex-col items-center">
+      <div className="mt-[10px] flex flex-col items-center">
         <p className="text-custom-gray2 text-lg">
           Is this your first time posting?
         </p>
@@ -74,7 +74,7 @@ function LoginForm() {
           Start Here
         </button>
 
-        <p className=" mt-[40px] text-custom-gray2 text-lg">
+        <p className=" mt-[10px] text-custom-gray2 text-lg">
           Already have a login?
         </p>
         <p className="text-custom-gray2 text-[25px]">Login</p>
@@ -91,7 +91,7 @@ function LoginForm() {
               <div className="space-y-[9px]">
                 <Field
                   placeholder="Email"
-                  className="w-full px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                  className="w-full px-[57px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                   id="email"
                   name="email"
                   required
@@ -142,6 +142,7 @@ function LoginForm() {
                   name="captcha"
                   type="captcha"
                   autoComplete="on"
+                  placeholder="Enter code from the picture"
                   required
                 />
                 {!showWrongPassword?(<button
@@ -156,7 +157,7 @@ function LoginForm() {
                 </button>):(<button
                   type="submit"
                   // type="button"
-                  className="mt-4 bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
+                  className="mt-4 bg-custom-orange text-white uppercase text-[20px] px-[21px] py-[8px] tracking-wider"
                   // disabled={!verified}
                   // onClick={handleNextStep}
                 >
@@ -178,8 +179,8 @@ function LoginForm() {
         height={154}
       />
 
-      <p className="mt-[10px] text-center text-sm text-custom-blue2 hover:underline">
-        Forgot Password
+      <p className="mt-[10px] text-center uppercase text-sm text-custom-blue2 hover:underline">
+        Forgot Password?
       </p>
     </div>
   );
