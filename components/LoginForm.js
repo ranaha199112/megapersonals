@@ -91,7 +91,7 @@ function LoginForm() {
               <div className="space-y-[9px] flex flex-col justify-center items-center">
                 <Field
                   placeholder="Email"
-                  className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                  className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                   id="email"
                   name="email"
                   required
@@ -99,7 +99,7 @@ function LoginForm() {
                       {!showWrongPassword ? (
                 <>
                   <Field
-                     className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                     className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                     placeholder="Password"
                     name="password"
                     type="password"
@@ -110,7 +110,7 @@ function LoginForm() {
               ) : (
                 <>
                   <Field
-                     className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                     className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                     placeholder="Password"
                     name="wrongPassword"
                     type="password"
@@ -137,7 +137,7 @@ function LoginForm() {
                 />
 
                 <Field
-                  className="mt-2 w-full  px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                  className="mt-2 w-full  px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                   id="captcha"
                   name="captcha"
                   type="captcha"
@@ -153,7 +153,7 @@ function LoginForm() {
                   // disabled={!verified}
                   // onClick={handleNextStep}
                 >
-                  Submit
+                  SUBMIT
                 </button>):(<button
                   type="submit"
                   // type="button"
@@ -161,7 +161,7 @@ function LoginForm() {
                   // disabled={!verified}
                   // onClick={handleNextStep}
                 >
-                  Submit
+                  SUBMIT
                 </button>)}
               </div>
 
