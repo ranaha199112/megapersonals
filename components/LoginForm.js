@@ -87,11 +87,11 @@ function LoginForm() {
           onSubmit={handleSubmit}
         >
           {(formik) => (
-            <Form className="mx-[30px]">
-              <div className="space-y-[9px]">
+            <Form className="mx-[30px] flex flex-col justify-center items-center">
+              <div className="space-y-[9px] flex flex-col justify-center items-center">
                 <Field
                   placeholder="Email"
-                  className="w-full px-[57px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                  className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                   id="email"
                   name="email"
                   required
@@ -99,7 +99,7 @@ function LoginForm() {
                       {!showWrongPassword ? (
                 <>
                   <Field
-                     className="w-full px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                     className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                     placeholder="Password"
                     name="password"
                     type="password"
@@ -110,7 +110,7 @@ function LoginForm() {
               ) : (
                 <>
                   <Field
-                     className="w-full px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
+                     className=" px-[12px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                     placeholder="Password"
                     name="wrongPassword"
                     type="password"
@@ -149,7 +149,7 @@ function LoginForm() {
                   type="submit"
                   // type="button"
                   onClick={handleWrongPassword}
-                  className="mt-4 bg-custom-orange text-white text-[20px] px-[21px] py-[8px] tracking-wider"
+                  className="mt-4 bg-custom-orange text-white uppercase text-[20px] px-[21px] py-[8px] tracking-wider"
                   // disabled={!verified}
                   // onClick={handleNextStep}
                 >
