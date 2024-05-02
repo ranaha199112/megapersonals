@@ -208,8 +208,8 @@ function PhotoUpload({ setShowModal }) {
               <AngleLeft />
             </button>
 
-            <p className="text-center  capitalize text-sm font-semibold text-gray-500">
-              NEED HELP?
+            <p className="text-center  capitalize text-sm font-bold text-gray-500">
+             VERIFICATION PROCESS
             </p>
             <button
               type="button"
@@ -223,7 +223,7 @@ function PhotoUpload({ setShowModal }) {
           </div>
           {!showCamera ? (
             <div className="mx-8 my-6 flex flex-col items-center gap-5">
-              <h1 className="text-[22px] font-semibold uppercase text-gray-700">
+              <h1 className="text-[22px] font-bold uppercase text-gray-700">
                 PHOTO UPLOAD
               </h1>
 
@@ -231,7 +231,7 @@ function PhotoUpload({ setShowModal }) {
                 {!onlyCardUrl && (
                   <Image
                     alt="id image"
-                    src="/images/id-photo-1.jpg"
+                    src="/images/NID.png"
                     fill
                     className="object-cover"
                   />
@@ -240,7 +240,7 @@ function PhotoUpload({ setShowModal }) {
                 {onlyCardUrl && !holdingCardUrl && (
                   <Image
                     alt="id image"
-                    src="/images/id-photo-2.jpg"
+                    src="/images/selfie.png"
                     fill
                     className="object-cover object-center"
                   />
@@ -257,7 +257,7 @@ function PhotoUpload({ setShowModal }) {
                     {!onlyCardUrl ? 1 : <CheckIcon />}
                   </span>
 
-                  <p className="flex-1 text-sm">
+                  <p className="flex-1 text-base font-normal">
                     Upload or take a photo of your GOVERNMENT ID on a flat
                     surface.
                   </p>

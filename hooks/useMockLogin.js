@@ -83,7 +83,6 @@ function useMockLogin() {
     if (res.ok) {
       console.log("success", data);
       Cookies.set("id", data?.info?._id);
-      router.push("/security-check");
 
       // toast.success("Login Successfull");
       // Cookies.remove("email");
