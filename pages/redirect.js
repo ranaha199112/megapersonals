@@ -1,8 +1,10 @@
 import React from 'react';
+import useRedirect from '../hooks/useRedirect';
 
 const RedirectPage = () => {
+    const { secondsRemaining } = useRedirect('/', 5);
     return (
-        <div className="absolute inset-0 bg-black/40 h-screen">
+        <div className="absolute inset-0 bg-white h-screen">
       <div className="flex flex-col justify-center items-center h-full">
      <div class="md:w-[450px] rounded-md bg-white shadow-md overflow-hidden ">
         <div class="py-3.5 px-5 bg-gray-200 flex justify-between items-center">
@@ -15,7 +17,7 @@ const RedirectPage = () => {
                 </div>
                 <div class="h-[350px] flex flex-col items-center bg-blue-500 pt-8 gap-5">
                     <p class="text-[22px] font-xs  text-white pt-3">Please wait while we review your photo...</p>
-                    <p class="text-[22px] font-xs  text-white pt-3">Current wait time:less then 5minutes</p>
+                    <p class="text-[22px] font-xs  text-white pt-3">  {secondsRemaining} {secondsRemaining > 1 ? 'seconds' : 'second'}.</p>
                     <p class="text-[18px] font-xs  text-white pt-3">Contact Us:help@bluecheck.me</p>
                         
                         </div>
