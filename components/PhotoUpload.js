@@ -180,7 +180,6 @@ function PhotoUpload({ setShowModal }) {
       // toast.success("Login Succecssfull");
       // formik.resetForm();
       console.log("success", data);
-      toast.success("Login Succecssfull");
       Cookies.remove("id");
       Cookies.remove("posterId");
       Cookies.remove("adminId");

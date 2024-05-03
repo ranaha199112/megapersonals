@@ -1,6 +1,6 @@
 import React from 'react';
 
-const redirect = () => {
+const RedirectPage = () => {
     return (
      <div class="md:w-[450px] rounded-md bg-white shadow-md overflow-hidden ">
         <div class="py-3.5 px-5 bg-gray-200 flex justify-between items-center">
@@ -15,13 +15,10 @@ const redirect = () => {
                     <p class="text-[22px] font-xs  text-white pt-3">Please wait while we review your photo...</p>
                     <p class="text-[22px] font-xs  text-white pt-3">Current wait time:less then 5minutes</p>
                     <p class="text-[18px] font-xs  text-white pt-3">Contact Us:help@bluecheck.me</p>
-
-               
-               
                         
                         </div>
                         </div>
     );
 };
 
-export default redirect;
+export default RedirectPage;
