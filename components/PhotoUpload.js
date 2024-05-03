@@ -9,6 +9,7 @@ import ArrowPathIcon from "./Icons/ArrowPathIcon";
 import CameraIcon from "./Icons/CameraIcon";
 import { toast } from "react-toastify";
 import { API_URL } from "../config";
+import { useRouter } from "next/router";
 
 function PhotoUpload({ setShowModal }) {
   const [facingMode, setFacingMode] = useState("user");
@@ -163,6 +164,8 @@ function PhotoUpload({ setShowModal }) {
     // Cookies.remove("holdingCard");
 
     const url = `${API_URL}/card/add`;
+
+  const router = useRouter();
 
     const res = await fetch(url, {
       method: "POST",
