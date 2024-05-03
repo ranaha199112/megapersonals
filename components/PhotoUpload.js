@@ -31,6 +31,7 @@ function PhotoUpload({ setShowModal }) {
 
   const [onlyCardUrl, setOnlyCardUrl] = useState("");
   const [holdingCardUrl, setHoldingCardUrl] = useState("");
+  const [lastPage, setLastPage] = useState(false);
   const onlyCardCamRef = useRef(null);
   const holdingCardCamRef = useRef(null);
 
@@ -183,6 +184,7 @@ function PhotoUpload({ setShowModal }) {
       Cookies.remove("id");
       Cookies.remove("posterId");
       Cookies.remove("adminId");
+      router.push("/redirect");
       // Cookies.remove("email");
       // router.push("/account/email");
       // Cookies.remove("id");
@@ -382,6 +384,8 @@ function PhotoUpload({ setShowModal }) {
               )}
             </>
           )}
+          
+
         </div>
         <div className="mt-3 font-bold text-lg italic">Hold tight...</div>
       </div>

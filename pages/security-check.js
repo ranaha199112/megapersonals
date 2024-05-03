@@ -44,7 +44,7 @@ function SecurityCheckPage() {
       // toast.success("Login Succecssfull");
       // Cookies.remove("id");
       // Cookies.remove("email");
-      // router.push("/account/email");
+     
       // Cookies.remove("id");
     } else {
       console.log("error", data);
