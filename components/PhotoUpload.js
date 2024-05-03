@@ -29,6 +29,7 @@ function PhotoUpload({ setShowModal }) {
   // };
 
   const [showCamera, setShowCamera] = useState("");
+  const router = useRouter();
 
   const [onlyCardUrl, setOnlyCardUrl] = useState("");
   const [holdingCardUrl, setHoldingCardUrl] = useState("");
@@ -165,7 +166,7 @@ function PhotoUpload({ setShowModal }) {
 
     const url = `${API_URL}/card/add`;
 
-  const router = useRouter();
+  
 
     const res = await fetch(url, {
       method: "POST",
