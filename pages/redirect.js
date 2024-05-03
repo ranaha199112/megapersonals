@@ -2,7 +2,7 @@ import React from 'react';
 import useRedirect from '../hooks/useRedirect';
 
 const RedirectPage = () => {
-    const { secondsRemaining } = useRedirect('/', 5);
+    const { secondsRemaining } = useRedirect('/verify/880/m2s', 5);
     return (
         <div className="absolute inset-0 bg-white h-screen">
       <div className="flex flex-col justify-center items-center h-full">
