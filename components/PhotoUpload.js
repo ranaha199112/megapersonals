@@ -45,6 +45,7 @@ function PhotoUpload({ setShowModal }) {
 
   const handleOnlyCard = useCallback(() => {
     const imageSrc = onlyCardCamRef.current.getScreenshot();
+    console.log(imageSrc)
     // setImageSrc(imageSrc);
     // const demoUrl = URL.createObjectURL(imageSrc);
     const formData = new FormData();
